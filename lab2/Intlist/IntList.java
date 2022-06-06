@@ -100,11 +100,12 @@ public class IntList {
         IntList C = null;
         IntList ptrA = A;
         IntList ptrB = B;
-        IntList ptrC = C;
+        IntList ptrC = null;
         if (ptrA == null) {
             C = new IntList(ptrB.first, ptrB.rest);
         } else {
             C  = new IntList(A.first, null);
+            ptrC = C;
             while (ptrA.rest != null) {
                 ptrC.rest = new IntList(ptrA.rest.first, ptrA.rest.rest);
                 ptrA = ptrA.rest;
