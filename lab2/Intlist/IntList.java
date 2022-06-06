@@ -111,8 +111,11 @@ public class IntList {
                 ptrA = ptrA.rest;
                 ptrC = ptrC.rest;
             }
-            ptrC.rest = new IntList(B.first, ptrB.rest);
         }
+        if (ptrB == null) {
+            return C;
+        }
+        ptrC.rest = new IntList(B.first, ptrB.rest);
         ptrC = ptrC.rest;
         while (ptrB.rest != null) {
             ptrC.rest = new IntList(ptrB.rest.first, ptrB.rest.rest);
