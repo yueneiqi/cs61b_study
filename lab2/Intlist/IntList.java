@@ -102,7 +102,10 @@ public class IntList {
         IntList ptrB = B;
         IntList ptrC = null;
         if (ptrA == null) {
-            C = new IntList(ptrB.first, ptrB.rest);
+            if (ptrB == null) {
+                return null;
+            }
+            C = new IntList(ptrB.first, ptrB.rest); // error here
         } else {
             C  = new IntList(A.first, null);
             ptrC = C;
